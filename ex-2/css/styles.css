@@ -1,4 +1,4 @@
-/* 
+
 * {
 	box-sizing: border-box;
 }
@@ -12,7 +12,7 @@ body {
 	color: #333;
 }
 
-img {
+ img {
 	max-width: 100%;
 }
 
@@ -62,13 +62,13 @@ img {
 	display: block;
 	text-align: center;
 	margin: 1rem 0 .5rem 0;
-	color: #eee;
+	color: red;
 }
 
 @media screen and (min-width: 50rem) {
 	body {
-		border-left: 4px solid #f9f9f9;
-		border-right: 4px solid #f9f9f9;
+		border-left: 4px solid green;
+		border-right: 4px solid green;
 		padding: 1rem 2rem;
 	}
 
