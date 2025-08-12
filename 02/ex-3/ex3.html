@@ -5,11 +5,20 @@
         <title>Video in HTML5</title>
         <meta name="description" content="A basic HTML5 video link" />
         <meta name="viewport" content="width=device-width" />
+    
+    <style>
+        video {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
     </head>
     <body>
         <video
-            width="640"
-            height="480"
+            max-width="100%"
+            height="auto"
             controls
             preload="auto"
             loop
