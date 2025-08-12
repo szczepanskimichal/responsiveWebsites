@@ -46,7 +46,8 @@
             launchBtn.addEventListener("click", () => dialogEle.showModal());
             dialogEle.addEventListener("close", () => {
                 formResult.textContent = dialogEle.returnValue;
-                document.body.style.background = "#2ecc40"; // Set background to green after dialog closes
+                document.body.style.transition = "background-color 5s";
+                document.body.style.backgroundColor = "#2ecc40"; // Animate background to green over 5 seconds
             });
         </script>
     </body>
