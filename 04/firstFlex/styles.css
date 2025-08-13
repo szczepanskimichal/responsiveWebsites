@@ -1,0 +1,17 @@
+html,
+body {
+margin: 0;
+padding: 0;
+}
+
+.centerMe {
+    background-color: blueviolet;
+    color: white;
+    font-family: "Oswald", sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
