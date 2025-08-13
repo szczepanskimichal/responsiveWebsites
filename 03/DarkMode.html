@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkMode</title>
+    <style>
+        @media (prefers-color-scheme: dark){
+            body {
+                background-color: black;
+                color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button onclick="changeBackgroundColor()">
+        Change color
+    </button>
+<script>
+    function changeBackgroundColor(){
+        document.body.style.backgroundColor = document.body.style.backgroundColor  === "black" ? "white" : "black";
+    }
+</script>
+</body>
+</html>
