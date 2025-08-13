@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>!!!ContainerQuerry!!!</title>
+<style>
+.card-container {
+    container-type: inline-size; /* Enable container queries*/
+    display: inline-flex;
+   margin: auto; 
+    align-items: center;
+    justify-content:right;
+}
+@container (min-width: 300px) {
+    .card {
+        background-color: lightblue;
+        font-size: x-large;
+    }
+    @container (min-width: 600px) {
+        .card {
+            background-color: lightgreen;
+            font-size: medium;
+        }
+    }
+}
+</style>
+</head>
+
+<body>
+    
+    <div class="card-container" style="width: 250px; background-color: lightgreen;">
+        <div class="card">
+            <h2>Title</h2>
+            <p>Content</p>
+        </div>
+    </div>
+    
+    <div class="card-container" style="width: 450px;">
+        <div class="card">
+            <h2>Title</h2>
+            <p>Content</p>
+        </div>
+    </div>
+    
+    <div class="card-container" style="width: 750px;">
+        <div class="card">
+            <h2>Title</h2>
+            <p>Content</p>
+        </div>
+    </div>
+    
+</body>
+</html>
