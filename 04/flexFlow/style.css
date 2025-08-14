@@ -1,0 +1,59 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Oswald", sans-serif;
+    color: #ebebeb;
+}
+
+.container {
+    background-color: indigo;
+    display: flex;
+    flex-direction: column;
+}
+.item {
+    display: flex;
+    align-items: center;
+    min-height: 6.25rem;
+    padding: 1rem;
+}
+header {
+    background-color: #105b63;
+}
+main {
+    background-color: #fffad5;
+    color: #333;
+}
+aside {
+    background-color: #ffd34e;
+    color: #222;
+}
+aside.aside-two {
+    background-color: #db9e36;
+    color: #333;
+}
+footer {
+    background-color: #bd4932;
+}
+@media (min-width: 650px){
+    .container{flex-flow: row wrap;
+    }
+    header{
+        flex:0 0 100%;
+        order:2;
+    }
+    main{
+        flex: 1 0 auto;
+order: 3;
+    }
+    aside{
+        flex: 0 0 150px;
+    };
+    aside.aside-two{
+        flex: 0 0 150px;
+    }
+    footer{
+        flex: 1 0 100%;
+        order: 1;
+    }
+}
