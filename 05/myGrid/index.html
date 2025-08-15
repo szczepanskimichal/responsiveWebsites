@@ -8,36 +8,76 @@
 </head>
 <body>
     <div class="grid-container">
-        <div class="item1">
-            <h1>Header</h1>
-        </div>
-        <div class="item2">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-        <div class="item3">
-            <h1>Something</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia eos a dicta voluptatibus dolorem illum</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, omnis molestiae repudiandae accusamus earum ipsam, suscipit voluptatem atque labore quod numquam! Quam veritatis fuga accusantium at! Eveniet, quidem optio. Consectetur!quia nihil aspernatur itaque molestiae, quos optio harum porro voluptas numquam cum modi iure sed!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus!</p>
-        </div>
-        <div class="item4">
-            <h2>info:</h2>
-            <ul>
-                <li>Additional Information 1</li>
-                <li>Additional Information 2</li>
-                <li>Additional Information 3</li>
-            </ul>
-        </div>
-        <div class="item5">
-            <address>
-                <p>footer content Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus! </p>
-            </address>
-        </div>
+
+                <div class="item1 main-header">
+                    <div class="logo-title">
+                        <a href="index.html" class="logo-link">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <rect x="8" y="18" width="24" height="14" rx="3" fill="#4F8EF7"/>
+                                <polygon points="20,8 8,18 32,18" fill="#2D5FA7"/>
+                                <rect x="18" y="25" width="4" height="7" rx="1" fill="#fff"/>
+                            </svg>
+                        </a>
+                        <span class="brand-name">IntelliHome</span>
+                    </div>
+                    <button class="menu-btn" id="menu-toggle" aria-label="Open menu">
+                        <svg width="32" height="32" viewBox="0 0 32 32">
+                            <rect y="6" width="32" height="4" rx="2" fill="#333"/>
+                            <rect y="14" width="32" height="4" rx="2" fill="#333"/>
+                            <rect y="22" width="32" height="4" rx="2" fill="#333"/>
+                        </svg>
+                    </button>
+                    <div id="mobile-menu" class="mobile-menu-overlay">
+                        <button class="close-btn" id="menu-close" aria-label="Close menu">&times;</button>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li class="login-link"><a href="#">Log in / Log out</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item3 hero">
+                    <svg class="hero-img" width="220" height="140" viewBox="0 0 220 140" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Modern smart home illustration">
+                        <rect x="30" y="60" width="160" height="60" rx="8" fill="#E3ECFA"/>
+                        <polygon points="110,30 30,60 190,60" fill="#4F8EF7"/>
+                        <rect x="60" y="85" width="30" height="35" rx="4" fill="#fff"/>
+                        <rect x="130" y="85" width="30" height="35" rx="4" fill="#fff"/>
+                        <rect x="100" y="100" width="20" height="25" rx="3" fill="#B3D1F7"/>
+                        <circle cx="175" cy="75" r="6" fill="#4F8EF7"/>
+                        <rect x="45" y="70" width="15" height="8" rx="2" fill="#B3D1F7"/>
+                        <rect x="160" y="70" width="15" height="8" rx="2" fill="#B3D1F7"/>
+                        <rect x="105" y="115" width="10" height="10" rx="2" fill="#4F8EF7"/>
+                        <rect x="70" y="95" width="10" height="10" rx="2" fill="#B3D1F7"/>
+                        <rect x="140" y="95" width="10" height="10" rx="2" fill="#B3D1F7"/>
+                    </svg>
+                    <h1 class="hero-title">Smart home solutions</h1>
+                </div>
+
+                <div class="item4 welcome">
+                    <h2>Welcome to IntelliHome</h2>
+                    <p>We provide innovative solutions for intelligent homes</p>
+                </div>
+
+
+    <!-- Footer usunięty na mobile -->
     </div>
+                <script>
+                const menu = document.getElementById("mobile-menu");
+const openBtn = document.getElementById("menu-toggle");
+const closeBtn = document.getElementById("menu-close");
+
+function toggleMenu(show) {
+  menu.style.display = show ? "flex" : "none";
+  document.body.style.overflow = show ? "hidden" : "";
+  openBtn.style.display = show ? "none" : "block";
+  closeBtn.style.display = show ? "block" : "none";
+}
+
+openBtn.onclick = () => toggleMenu(true);
+closeBtn.onclick = () => toggleMenu(false);
+                </script>
 </body>
 </html>
