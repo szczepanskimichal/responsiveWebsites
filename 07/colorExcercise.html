@@ -21,6 +21,7 @@
             margin: 20px; /* Margin around the square */
             border-radius: 10px; /* Rounded corners */
             border: 2px solid #ccc; /* Gray border */
+            cursor: pointer;
         }
         button {
             padding: 10px 20px; /* Button padding */
@@ -46,6 +47,13 @@
             height: 100px; 
             margin-left: 10px; 
         }
+        .whiteBox:hover,
+        .blackBox:hover {
+            filter: brightness(120%); 
+            cursor: pointer;
+        }
+    
+
     </style>
 </head>
 <body onload="generateRandomHSL()"> <!-- Calls generateRandomHSL when the page loads -->
@@ -61,6 +69,8 @@
     <script>
         const display = document.querySelector('.color-display'); // Selects the div for displaying the color
         const output = document.querySelector('.color-code'); // Selects the paragraph for showing the HSL code
+        const whiteBox=document.querySelector(".whiteBox");
+        const blackBox=document.querySelector(".blackBox");
 
         function generateRandomHSL() {
             // Random value from 0 to 359 for hue
@@ -74,10 +84,46 @@
 
             display.style.backgroundColor = hslColor; // Sets the background of the square to the generated color
             output.textContent = `HSL: ${hslColor}`; // Displays the HSL code below the square
-        }
+            document.body.style.color=hslColor; // Sets the text color to the generated HSL color
+        
+        whiteBox.style.backgroundColor = `color-mix(in hsl, ${hslColor} 50%, white 50%)`;
+blackBox.style.backgroundColor = `color-mix(in hsl, ${hslColor} 50%, black 50%)`;
+ 
+document.body.style.backgroundColor = `color-contrast(${hslColor} vs darkgray, darkblue, darkgreen, gray, lightgray)`;
+    }
 
         // Generate an initial color on load
         generateRandomHSL(); // Generates the first color when the page loads
     </script>
 </body>
 </html>
+
+
+
+1. Generering og bruk av farge
+
+Generer en HSL-farge i CSS/JS. FERDIG &#10003;
+
+Bruk denne fargen som tekstfarge på nettsiden (color). - FERDIG &#10003;
+
+2. Bakgrunnsfarge med god kontrast
+
+Lag en liste over kandidat-farger: darkgray, darkblue, darkgreen, gray, lightgray.
+
+Bruk color-contrast() til å velge hvilken av dem som gir best kontrast mot den genererte fargen.
+
+Sett den valgte kontrastfargen som bakgrunnsfarge for hele siden.
+
+3. To nye bokser med blanding
+
+Lag to <div>-bokser på nettsiden.
+
+Gi den første boksen en bakgrunnsfarge som er color-mix() mellom generert farge og 50% white.
+
+Gi den andre boksen en bakgrunnsfarge som er color-mix() mellom generert farge og 50% black.
+
+4. Hover-effekt
+
+Definer en :hover-regel for boksene.
+
+Når brukeren holder musepekeren over en boks, øk lysstyrken til bakgrunnsfargen med +20% (hsl() eller color-mix() kan brukes). 
