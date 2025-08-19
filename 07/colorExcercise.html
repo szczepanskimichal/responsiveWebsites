@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Sets character encoding to UTF-8 (supports special characters) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the page responsive on mobile devices -->
+    <title>Random HSL Color Generator</title> <!-- Page title in the browser tab -->
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Sets the font for the whole page */
+            display: flex; /* Enables flexbox on body */
+            flex-direction: column; /* Arranges elements in a column */
+            align-items: center; /* Centers elements horizontally */
+            justify-content: center; /* Centers elements vertically */
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Removes default margins */
+            background-color: #f0f0f0; /* Light background color */
+        }
+        .color-display {
+            width: 200px; /* Width of the color square */
+            height: 200px; /* Height of the color square */
+            margin: 20px; /* Margin around the square */
+            border-radius: 10px; /* Rounded corners */
+            border: 2px solid #ccc; /* Gray border */
+        }
+        button {
+            padding: 10px 20px; /* Button padding */
+            font-size: 16px; /* Button font size */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+    </style>
+</head>
+<body onload="generateRandomHSL()"> <!-- Calls generateRandomHSL when the page loads -->
+    <h1>Random HSL Color Generator</h1> <!-- Page heading -->
+    <div class="color-display"></div> <!-- Square where the color is shown -->
+    <p class="color-code">HSL: </p> <!-- Paragraph to display the HSL code -->
+    <button onclick="generateRandomHSL()">Generate New Color</button> <!-- Button to generate a new color -->
+
+    <script>
+        const display = document.querySelector('.color-display'); // Selects the div for displaying the color
+        const output = document.querySelector('.color-code'); // Selects the paragraph for showing the HSL code
+
+        function generateRandomHSL() {
+            // Random value from 0 to 359 for hue
+            const hue = Math.floor(Math.random() * 360);
+            // Random value from 0 to 100 for saturation
+            const saturation = Math.floor(Math.random() * 101);
+            // Random value from 0 to 100 for lightness
+            const lightness = Math.floor(Math.random() * 101);
+            // Creates a string in HSL format, e.g. "hsl(120, 50%, 60%)"
+            const hslColor = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+
+            display.style.backgroundColor = hslColor; // Sets the background of the square to the generated color
+            output.textContent = `HSL: ${hslColor}`; // Displays the HSL code below the square
+        }
+
+        // Generate an initial color on load
+        generateRandomHSL(); // Generates the first color when the page loads
+    </script>
+</body>
+</html>
