@@ -86,7 +86,7 @@
             output.textContent = `HSL: ${hslColor}`; // Displays the HSL code below the square
             document.body.style.color=hslColor; // Sets the text color to the generated HSL color
         
-        whiteBox.style.backgroundColor = `color-mix(in hsl, ${hslColor} 50%, white 50%)`;
+        whiteBox.style.backgroundColor = `color-mix(in hsl, ${hslColor}10%, white 10%)`;
 blackBox.style.backgroundColor = `color-mix(in hsl, ${hslColor} 50%, black 50%)`;
  
 document.body.style.backgroundColor = `color-contrast(${hslColor} vs darkgray, darkblue, darkgreen, gray, lightgray)`;
