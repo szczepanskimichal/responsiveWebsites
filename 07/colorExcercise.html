@@ -27,13 +27,36 @@
             font-size: 16px; /* Button font size */
             cursor: pointer; /* Pointer cursor on hover */
         }
+        .innhold {
+            display: flex; 
+            width: 100%; 
+            max-width: 600px; 
+            margin: 20px 0; 
+            border: 1px solid red; 
+        }
+        .whiteBox {
+            background-color: white; 
+            flex: 1; 
+            height: 100px; 
+            margin-right: 10px; 
+        }
+        .blackBox {
+            background-color: black; 
+            flex: 1;
+            height: 100px; 
+            margin-left: 10px; 
+        }
     </style>
 </head>
 <body onload="generateRandomHSL()"> <!-- Calls generateRandomHSL when the page loads -->
     <h1>Random HSL Color Generator</h1> <!-- Page heading -->
     <div class="color-display"></div> <!-- Square where the color is shown -->
     <p class="color-code">HSL: </p> <!-- Paragraph to display the HSL code -->
-    <button onclick="generateRandomHSL()">Generate New Color</button> <!-- Button to generate a new color -->
+        <button onclick="generateRandomHSL()">Generate New Color</button> 
+    <div class="innhold">
+        <div class="whiteBox"></div>
+        <div class="blackBox"></div>
+    </div>
 
     <script>
         const display = document.querySelector('.color-display'); // Selects the div for displaying the color
