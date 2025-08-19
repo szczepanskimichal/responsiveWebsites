@@ -1,13 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG ViewBox Controls</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #f0f0f0;
+    }
+    .controls {
+      max-width: 600px;
+      width: 100%;
+      display: flex;
+      margin-bottom: 20px;
+      padding: 10px;
+    }
+    .controls input {
+      margin-right: 5px;
+      cursor: pointer;
+    }
+    .controls label {
+      margin-right: 5px;
+      margin-left: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-grow: 1;
+    }
+    .output {
+      margin-bottom: 24px;
+      font-size: 24px;
+      line-height: 1.5;
+      font-weight: 700;
+      font-family: monospace;
+      background: #f7f7f7;
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+  </style>
 </head>
 <body>
-    <div class="controls my-buttons">
-<label >X<input type="range" min="500" max="500" name="x"</label>
-    </div>
+  <h1>SVG ViewBox Controls</h1>
+  <div class="controls js-controls">
+    <label>
+      x
+      <input type="range" min="-400" max="400" name="x">
+    </label>
+    <label>
+      y
+      <input type="range" min="-200" max="200" name="y">
+    </label>
+    <label>
+      width
+      <input type="range" min="200" max="800" name="width">
+    </label>
+    <label>
+      height
+      <input type="range" min="100" max="400" name="height">
+    </label>
+  </div>
+  <code class="output js-output">&lt;svg viewBox="<span data-x>0</span> <span data-y>0</span> <span data-width>0</span> <span data-height>0</span>"&gt;</code>
+  <svg class="js-vector" xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200" style="outline: 2px dashed #2a2a2a;">
+    <circle r="75" cx="50%" cy="50%" fill="tomato" />
+  </svg>
+  <script>
+    // Object storing the current viewBox values
+    const viewBoxState = {
+      x: 15,      // horizontal offset of the viewBox
+      y: 120,      // vertical offset of the viewBox
+      width: 400, // width of the viewBox area
+      height: 400 // height of the viewBox area
+    };
+
+    // Get references to HTML elements
+    const controlsRef = document.querySelector(".js-controls"); // container with sliders
+    const outputXRef = document.querySelector("[data-x]");      // span for x
+    const outputYRef = document.querySelector("[data-y]");      // span for y
+    const outputWidthRef = document.querySelector("[data-width]");  // span for width
+    const outputHeightRef = document.querySelector("[data-height]"); // span for height
+    const svgRef = document.querySelector(".js-vector");        // SVG element
+
+    // Set initial values in the code preview and SVG
+    setOutput();
+    updateSVG();
+
+    // Handle any slider (input) change
+    controlsRef.addEventListener("input", (event) => {
+      const { name, value } = event.target; // get the name and value of the slider
+      viewBoxState[name] = value;           // update the corresponding value in the object
+      setOutput();                          // update the code preview
+      updateSVG();                          // update the SVG viewBox
+    });
+
+    // This function updates the numbers shown in the code preview below the sliders
+function setOutput() {
+  // Get the current values for x, y, width, and height from the viewBoxState object
+  let x = viewBoxState.x;
+  let y = viewBoxState.y;
+  let width = viewBoxState.width;
+  let height = viewBoxState.height;
+
+//   // Show these values in the right places in the code preview
+//   outputXRef.textContent = x;      // Show x value
+//   outputYRef.textContent = y;      // Show y value
+//   outputWidthRef.textContent = width;  // Show width value
+//   outputHeightRef.textContent = height; // Show height value
+// }
+outputXRef.textContent = `x: ${x}`;
+outputYRef.textContent = `y: ${y}`;
+outputWidthRef.textContent = `width: ${width}`;
+outputHeightRef.textContent = `height: ${height}`;
+}
+
+    // Function to set the viewBox attribute in SVG
+    function updateSVG() {
+      const { x, y, width, height } = viewBoxState;
+      svgRef.setAttribute("viewBox", `${x} ${y} ${width} ${height}`); // set the viewBox
+      
+    }
+  </script>
 </body>
 </html>
