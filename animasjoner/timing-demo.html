@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Timing-funksjoner - Demo</title>
+  <!--
+  Why: Different timing functions change perceived motion (feel).
+  We show these side-by-side so learners can focus on why a timing choice matters for UX
+  rather than how the transform is applied.
+  Respect prefers-reduced-motion for accessibility.
+  -->
+  <style>
+    /*
+    Why: layout uses flex to keep boxes aligned;
+    transition on transform keeps animation GPU-friendly.
+    */
+    .timing-demo { display:flex; gap:10px; padding:30px; }
+    .box {
+      width: 100px; height: 50px; background:#3498db; color:white; display:flex; align-items:center; justify-content:center;
+      transition: transform 1s; /* Prefer transform over layout-affecting props for performance */
+      border-radius:6px; font-family:Arial,Helvetica,sans-serif;
+    }
+    .ease { /*
+             Why: natural motion for many UI changes
+           */
+      transition-timing-function: ease;
+    }
+    .linear { /*
+               Why: constant speed - useful for mechanical motion
+             */
+      transition-timing-function: linear;
+    }
+    .ease-in { /*
+                 Why: good for elements entering
+               */
+      transition-timing-function: ease-in;
+    }
+    .ease-out { /*
+                  Why: good for elements leaving
+                */
+      transition-timing-function: ease-out;
+    }
+    .cubic { /*
+                Why: dramatic easing for emphasis
+              */
+      transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .timing-demo:hover .box { transform: translateX(200px); }
+
+    @media (prefers-reduced-motion: reduce) {
+      /*
+      Why: reduce motion for users who request it
+      */
+      .box { transition: none; transform: none !important; }
+    }
+    body { background:#5f3b3b; font-family:Arial,Helvetica,sans-serif; padding:40px; }
+  </style>
+</head>
+<body>
+  <h1>Timing-funksjoner</h1>
+  <p>Hold musepekeren over for å se forskjellene.</p>
+  <div class="timing-demo">
+    <div class="box ease">Ease</div>
+    <div class="box linear">Linear</div>
+    <div class="box ease-in">Ease-in</div>
+    <div class="box ease-out">Ease-out</div>
+    <div class="box cubic">Cubic</div>
+  </div>
+</body>
+</html>
