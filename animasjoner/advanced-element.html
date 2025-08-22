@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Advanced element - Kombinerte effekter</title>
+    <!-- Why: Combine transform, background-color and box-shadow for a polished hover effect while limiting expensive repaints. Use prefers-reduced-motion to disable transitions for accessibility. -->
+    <style>
+      .advanced-element {
+        width: 280px;
+        height: 140px;
+        background: #fff;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease, background-color 0.3s ease,
+          box-shadow 0.3s ease;
+        margin: 80px auto;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+      }
+      .advanced-element:hover {
+        transform: translateY(-5px) scale(1.05);
+        background-color: #3498db;
+        color: white;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .advanced-element {
+          transition: none;
+          animation: none;
+        }
+      }
+
+      body {
+        background: #f7fbff;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="advanced-element">Hold musepekeren over meg</div>
+  </body>
+</html>
