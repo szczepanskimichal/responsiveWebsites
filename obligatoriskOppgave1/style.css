@@ -19,9 +19,13 @@ a {
     }
 
     .logo {
-      font-weight: bold;
-      cursor: pointer;
-    }
+  display: flex;
+  align-items: center; 
+  gap: 8px;            
+}
+.logo svg {
+  display: block;
+}
 
     /* Menu */
     .menu {
@@ -92,7 +96,7 @@ a {
         height: 40%;
       }
 
-      /* Checkbox hack for å toggle meny */
+      /* Checkbox hack for å toggle meny!!!! */
       #menu-toggle:checked ~ .menu {
         display: flex;
         padding-left: 10px;
@@ -123,12 +127,21 @@ a {
         transform: translateY(-50%);
         pointer-events: none;
       }
-   
-      
-      
-    
+      img{
+       max-width: 100%;
+       height: auto;
+      }
+.diagram >h1 {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+      .diagram >svg {
+        display: block;
+        margin: 0 auto;
+      }
     /* Tablet */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* @media (min-width: 769px) and (max-width: 1024px) {
     main{
         display: flex;
     }
@@ -164,15 +177,14 @@ a {
       .section2 {
         flex-grow: 2;
       }
-      
+       
 }
 
 /* Desktop */
-@media (min-width: 1025px) {
+/* @media (min-width: 1025px) {
   .menu {
     flex-direction: row;
     gap: 3rem;
-    /* inne zmiany dla desktopów */
   }
   .hamburger {
     display: none;
@@ -180,4 +192,4 @@ a {
   .topbar {
     padding: 16px 48px;
   }
-}
+} */
