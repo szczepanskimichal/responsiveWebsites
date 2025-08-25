@@ -30,8 +30,8 @@ a {
     /* Menu */
     .menu {
     display: flex;
-    gap: 1rem;
-    height: 25vh;
+    gap: 10px;
+    height: 25vh%;
     cursor: pointer;
     padding-top: 20px;
     }
