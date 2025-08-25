@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Obligatorisk oppgave 1</title> -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+  
+    </style>
+</head>
+<body>
+   
+ <header class="topbar">
+    <div><div class="logo"><svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <rect x="4" y="8" width="8" height="20" rx="4" fill="#1976d2"/>
+  <rect x="20" y="4" width="8" height="20" rx="4" fill="#42a5f5"/>
+  <rect x="12" y="16" width="8" height="12" rx="4" fill="#90caf9"/>
+</svg> Confluence</div></div>
+    
+
+    <!-- Skjult checkbox -->
+    <input type="checkbox" id="menu-toggle" style="display:none;">
+    <label for="menu-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <nav class="menu">
+        <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="15" stroke="#888" stroke-width="2" fill="#eee"/>
+        <circle cx="16" cy="13" r="5" fill="#bbb"/>
+        <ellipse cx="16" cy="22" rx="7" ry="4" fill="#bbb"/>
+      </svg>
+    </a> 
+      <a href="#">Spaces v</a>
+      <a href="#">People</a>
+      <a href="#">Create</a>
+      <a href="">...</a>   
+      <a href=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="24" height="24">
+        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+        <text x="12" y="16" text-anchor="middle" font-size="12" font-family="Arial, sans-serif" fill="currentColor" font-weight="bold">?</text>
+      </svg></a>
+      <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+          d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06A1.65 1.65 0 0 0 15 19.4a1.65 1.65 0 0 0-1.5 1.1 2 2 0 0 1-3 0A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82-.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.1-1.5 2 2 0 0 1 0-3A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1.5-1.1 2 2 0 0 1 3 0A1.65 1.65 0 0 0 15 4.6a1.65 1.65 0 0 0 1.82.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.26.5.26 1.1 0 1.6z"/>
+        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/>
+      </svg></a>
+      <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+          d="M15 17h5l-1.405-1.405A2.032 2.032 0 0 1 18 14.158V11a6 6 0 1 0-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 1 1-6 0v-1m6 0H9"/>
+      </svg></a>
+    <div class="search-container">
+      <input class="search" type="text" placeholder="Search...">
+      <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <circle cx="9" cy="9" r="7" stroke="#888" stroke-width="2"/>
+        <line x1="14.5" y1="14.5" x2="19" y2="19" stroke="#888" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    </nav>
+  </header>
+  <main>
+ <aside class="sidebar">
+    <ul>
+      <li><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="7" height="7" fill="#888"/><rect x="11" y="2" width="7" height="4" fill="#888"/><rect x="2" y="11" width="4" height="7" fill="#888"/><rect x="8" y="11" width="10" height="7" fill="#888"/></svg></li>
+      <li class="active"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="2" fill="#888"/><rect x="6" y="6" width="8" height="2" fill="#fff"/><rect x="6" y="10" width="8" height="2" fill="#fff"/></svg></li>
+      <li><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="14" width="3" height="3" fill="#888"/><rect x="8.5" y="9" width="3" height="8" fill="#888"/><rect x="14" y="5" width="3" height="12" fill="#888"/></svg></li>
+      <li><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" fill="#888"/><path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.22 4.22l1.42 1.42M14.36 14.36l1.42 1.42M4.22 15.78l1.42-1.42M14.36 5.64l1.42-1.42" stroke="#888" stroke-width="1.5" stroke-linecap="round"/></svg></li>
+    </ul>
+  </aside>
+  <section class="section1">
+    
+     <div>
+            <a href="">Pages /</a>
+            <a href="">samle space /</a>
+            <a href="">Engineering news</a>
+            <a href="">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+     stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <rect x="3" y="11" width="18" height="10" rx="2" />
+  <path d="M7 11V7a5 5 0 0 1 10 0" />
+</svg>
+            </a>    
+        </div>
+        <h1>2020-05-19 Meeting notes</h1>
+        <p>Created by Rach Admin, last modified just a moment ago</p>
+        <div class="date">
+            <h1>Date</h1>
+            <p>2025-08-25</p>
+        </div>
+        <div contenteditable="true">Attendees</div>
+        <ul>
+            <li>@Omar Daroe</li>
+            <li>@Jie Yang Song</li>
+            <li>@Jane Rotanson</li>
+        </ul>
+        <div>Agenda</div>
+        <ul>
+            <li>Review high priority issues</li>
+            <li>Assign owners and timelines</li>
+        </ul>
+  </section>
+  <section class="section2">
+    <div class="actions">
+<ul>
+    <li>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+  <path d="M16.862 3.487a2.06 2.06 0 0 1 2.916 2.915l-1.06 1.06-2.916-2.916 1.06-1.06z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15.803 4.547 4.5 15.85V19.5h3.65L19.453 8.197l-3.65-3.65z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg> Edit
+</li>
+<li>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#888" stroke-width="1.5">
+  <polygon points="12,2 15,9 22,9.5 17,14.5 18.5,22 12,18 5.5,22 7,14.5 2,9.5 9,9" fill="none" stroke="#888" stroke-width="1.5"/>
+</svg>
+Save for later
+</li>
+<li>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#888" stroke-width="1.5">
+  <ellipse cx="12" cy="12" rx="9" ry="5" stroke="#888" stroke-width="1.5" fill="none"/>
+  <circle cx="12" cy="12" r="2.5" fill="#888"/>
+</svg>
+Watching
+</li>
+<li>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#888" stroke-width="1.5">
+  <circle cx="18" cy="5" r="2.5" fill="none" stroke="#888" stroke-width="1.5"/>
+  <circle cx="6" cy="12" r="2.5" fill="none" stroke="#888" stroke-width="1.5"/>
+  <circle cx="18" cy="19" r="2.5" fill="none" stroke="#888" stroke-width="1.5"/>
+  <line x1="7.8" y1="13.2" x2="16.2" y2="17.8" stroke="#888" stroke-width="1.5"/>
+  <line x1="16.2" y1="6.2" x2="7.8" y2="10.8" stroke="#888" stroke-width="1.5"/>
+</svg> Share
+</li>
+                <li>...</li>
+            </ul>
+            </div>
+
+            
+    <div class="diagram">
+  <h1>Breakdown of issues by priority</h1>
+  <svg width="200" height="200" viewBox="0 0 32 32">
+    <!-- High Priority: 70% -->
+    <path d="M16 16 L16 0 A16 16 0 1 1 6.1 28.6 Z" fill="#e74c3c"/>
+    <!-- Medium Priority: 20% -->
+    <path d="M16 16 L6.1 28.6 A16 16 0 0 1 29.4 21.2 Z" fill="#f1c40f"/>
+    <!-- Low Priority: 10% -->
+    <path d="M16 16 L29.4 21.2 A16 16 0 0 1 16 0 Z" fill="#2ecc71"/>
+  </svg>
+  <div class="legend">
+    <span style="color:#e74c3c;">&#9632;</span> High Priority
+    <span style="color:#f1c40f;">&#9632;</span> Medium Priority
+    <span style="color:#2ecc71;">&#9632;</span> Low Priority
+
+  </div>
+</div>
+</div>
+        </div>
+  </section>
+  </main>
+    
+</body>
+</html>
